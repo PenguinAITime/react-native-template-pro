@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Card, Title, Paragraph } from 'react-native-paper';
-import Feather from 'react-native-vector-icons/Feather';
+import { Feather } from '@expo/vector-icons';
 import { AppButton } from '@components/common';
 import type { HomeScreenProps } from '@navigation/types';
 

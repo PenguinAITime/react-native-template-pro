@@ -1,5 +1,5 @@
 {
-  "extends": "@react-native/typescript-config",
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     // Strict mode
     "strict": true,
@@ -9,29 +9,46 @@
     "strictBindCallApply": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
-    
     // Additional checks
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
-    
     // Module resolution
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@features/*": ["src/features/*"],
-      "@navigation/*": ["src/navigation/*"],
-      "@services/*": ["src/services/*"],
-      "@store/*": ["src/store/*"],
-      "@theme/*": ["src/theme/*"],
-      "@types/*": ["src/types/*"],
-      "@utils/*": ["src/utils/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@providers/*": ["src/providers/*"]
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@features/*": [
+        "src/features/*"
+      ],
+      "@navigation/*": [
+        "src/navigation/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@store/*": [
+        "src/store/*"
+      ],
+      "@theme/*": [
+        "src/theme/*"
+      ],
+      "@types/*": [
+        "src/types/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@providers/*": [
+        "src/providers/*"
+      ]
     },
-    
     // Other options
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -39,6 +56,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["src/**/*", "nativewind.d.ts"],
-  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
+  "include": [
+    "src/**/*",
+    "nativewind.d.ts",
+    "nativewind-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }

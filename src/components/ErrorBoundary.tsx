@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Feather from 'react-native-vector-icons/Feather';
+import { Feather } from '@expo/vector-icons';
 
 interface ErrorFallbackProps {
   error: Error;
