@@ -1,4 +1,4 @@
-package com.insuranceapp
+package com.reactnativetemplate
 
 import android.app.Application
 import com.facebook.react.PackageList

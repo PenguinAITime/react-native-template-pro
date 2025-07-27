@@ -1,97 +1,166 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Template
 
-# Getting Started
+A production-ready React Native template with TypeScript, NativeWind (Tailwind CSS), Redux Toolkit, and comprehensive development tooling.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+- ✅ **TypeScript** - Fully typed with strict mode enabled
+- ✅ **NativeWind** - Use Tailwind CSS classes in React Native
+- ✅ **Redux Toolkit + RTK Query** - Modern state management with data fetching
+- ✅ **React Navigation** - Tab and stack navigation pre-configured
+- ✅ **React Native Paper** - Material Design components
+- ✅ **ESLint + Prettier** - Code quality and formatting
+- ✅ **Husky + lint-staged** - Pre-commit hooks
+- ✅ **Path Aliases** - Clean imports with @components, @features, etc.
+- ✅ **Claude Code YOLO Mode** - Pre-configured for fast development
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Quick Start
 
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+1. Clone this template:
+```bash
+git clone https://github.com/yourusername/ReactNativeTemplate.git MyNewApp
+cd MyNewApp
 ```
 
-## Step 2: Build and run your app
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+3. Install iOS dependencies (macOS only):
+```bash
+cd ios && pod install && cd ..
+```
+
+4. Start the development server:
+```bash
+npm start
+```
+
+5. Run the app:
+```bash
+# iOS
+npm run ios
+
+# Android
+npm run android
+```
+
+## Project Structure
+
+```
+src/
+├── components/        # Reusable components
+│   ├── common/       # Generic UI components
+│   └── forms/        # Form-specific components
+├── features/         # Feature-based modules
+│   ├── home/        # Home screen and related
+│   └── settings/    # Settings screen and related
+├── navigation/       # Navigation configuration
+├── services/         # API and external services
+│   └── api/         # RTK Query API setup
+├── store/           # Redux store configuration
+├── theme/           # Theme and styling
+├── types/           # TypeScript type definitions
+└── utils/           # Utility functions
+```
+
+## Available Scripts
+
+- `npm start` - Start Metro bundler
+- `npm run android` - Run on Android
+- `npm run ios` - Run on iOS
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint issues
+- `npm run format` - Format code with Prettier
+- `npm run typecheck` - Run TypeScript checks
+- `npm run check-all` - Run all checks (type, lint, format)
+- `npm test` - Run tests
+
+## Customization
+
+### Theme Colors
+
+Edit `tailwind.config.js` to customize your color palette:
+
+```javascript
+colors: {
+  primary: '#10B981',      // Your primary color
+  secondary: '#3B82F6',    // Your secondary color
+  // ... more colors
+}
+```
+
+### Navigation
+
+Edit `src/navigation/AppNavigator.tsx` to add new screens or modify navigation structure.
+
+### State Management
+
+The Redux store is configured in `src/store/store.ts`. Add new slices as needed:
+
+```typescript
+// src/store/yourSlice.ts
+import { createSlice } from '@reduxjs/toolkit';
+```
+
+## Development with Claude Code
+
+This template includes Claude Code configuration for fast development:
+
+- `.claude/settings.json` - Pre-configured with allowed tools
+- CLAUDE.md - Instructions for Claude
+
+To use YOLO mode (skip all permission prompts):
+```bash
+claude --dangerously-skip-permissions
+```
+
+Or press `Shift+Tab` in Claude Code for auto-accept mode.
+
+## Building for Production
 
 ### Android
 
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+1. Generate a signed APK:
+```bash
+cd android
+./gradlew assembleRelease
 ```
+
+2. The APK will be in `android/app/build/outputs/apk/release/`
 
 ### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+1. Open the project in Xcode:
+```bash
+open ios/ReactNativeTemplate.xcworkspace
 ```
 
-Then, and every time you update your native dependencies, run:
+2. Select your team and configure signing
+3. Build and archive through Xcode
 
-```sh
-bundle exec pod install
+## Troubleshooting
+
+### Metro Issues
+```bash
+npx react-native start --reset-cache
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+### Build Issues
+```bash
+cd android && ./gradlew clean && cd ..
+cd ios && rm -rf Pods Podfile.lock && pod install && cd ..
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## License
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+MIT
 
-## Step 3: Modify your app
+## Contributing
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Feel free to submit issues and enhancement requests!
