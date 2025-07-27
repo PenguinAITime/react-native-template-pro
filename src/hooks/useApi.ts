@@ -80,10 +80,12 @@ export function useApiMutation<TData = unknown, TVariables = unknown>(
 // Helper functions for common API calls
 export const apiHelpers = {
   get: <T>(url: string) => api.get<ApiResponse<T>>(url).then((res) => res.data),
-  post: <T>(url: string, data?: any) => api.post<ApiResponse<T>>(url, data).then((res) => res.data),
-  put: <T>(url: string, data?: any) => api.put<ApiResponse<T>>(url, data).then((res) => res.data),
+  post: <T>(url: string, data?: unknown) =>
+    api.post<ApiResponse<T>>(url, data).then((res) => res.data),
+  put: <T>(url: string, data?: unknown) =>
+    api.put<ApiResponse<T>>(url, data).then((res) => res.data),
   delete: <T>(url: string) => api.delete<ApiResponse<T>>(url).then((res) => res.data),
-  patch: <T>(url: string, data?: any) =>
+  patch: <T>(url: string, data?: unknown) =>
     api.patch<ApiResponse<T>>(url, data).then((res) => res.data),
 };
 

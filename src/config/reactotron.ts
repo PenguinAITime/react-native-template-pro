@@ -30,7 +30,10 @@ if (__DEV__) {
 }
 
 // Extend console with tron for easier logging
-console.tron = reactotron;
+if (__DEV__) {
+  // eslint-disable-next-line no-console, @typescript-eslint/no-explicit-any
+  (console as any).tron = reactotron;
+}
 
 // Export configured instance
 export default reactotron;
@@ -43,7 +46,10 @@ export const customCommands = [
     command: 'clearMMKV',
     handler: () => {
       storage.clearAll();
-      console.tron?.log?.('MMKV storage cleared');
+      if (__DEV__) {
+        // eslint-disable-next-line no-console, @typescript-eslint/no-explicit-any
+        (console as any).tron?.log?.('MMKV storage cleared');
+      }
     },
   },
   {
@@ -52,11 +58,14 @@ export const customCommands = [
     command: 'showStorageKeys',
     handler: () => {
       const keys = storage.getAllKeys();
-      console.tron?.display?.({
-        name: 'Storage Keys',
-        value: keys,
-        preview: `${keys.length} keys`,
-      });
+      if (__DEV__) {
+        // eslint-disable-next-line no-console, @typescript-eslint/no-explicit-any
+        (console as any).tron?.display?.({
+          name: 'Storage Keys',
+          value: keys,
+          preview: `${keys.length} keys`,
+        });
+      }
     },
   },
   {
@@ -66,7 +75,10 @@ export const customCommands = [
     handler: () => {
       storage.clearAll();
       // Add Redux reset logic here
-      console.tron?.log?.('App state reset');
+      if (__DEV__) {
+        // eslint-disable-next-line no-console, @typescript-eslint/no-explicit-any
+        (console as any).tron?.log?.('App state reset');
+      }
     },
   },
 ];

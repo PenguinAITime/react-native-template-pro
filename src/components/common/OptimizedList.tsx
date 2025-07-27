@@ -17,7 +17,7 @@ interface OptimizedListProps<T> {
   emptyMessage?: string;
   header?: React.ReactElement;
   footer?: React.ReactElement;
-  contentContainerStyle?: any;
+  contentContainerStyle?: object;
 }
 
 export function OptimizedList<T>({
@@ -36,15 +36,7 @@ export function OptimizedList<T>({
   footer,
   contentContainerStyle,
 }: OptimizedListProps<T>) {
-  if (isLoading && !data.length) {
-    return (
-      <View className="flex-1 justify-center items-center">
-        <ActivityIndicator size="large" />
-      </View>
-    );
-  }
-
-  const ListFooterComponent = () => {
+  const ListFooterComponent = React.useCallback(() => {
     if (isLoadingMore) {
       return (
         <View className="py-4">
@@ -53,13 +45,24 @@ export function OptimizedList<T>({
       );
     }
     return footer || null;
-  };
+  }, [isLoadingMore, footer]);
 
-  const ListEmptyComponent = () => (
-    <View className="flex-1 justify-center items-center p-8">
-      <Text className="text-gray-500 text-center">{emptyMessage}</Text>
-    </View>
+  const ListEmptyComponent = React.useCallback(
+    () => (
+      <View className="flex-1 justify-center items-center p-8">
+        <Text className="text-gray-500 text-center">{emptyMessage}</Text>
+      </View>
+    ),
+    [emptyMessage]
   );
+
+  if (isLoading && !data.length) {
+    return (
+      <View className="flex-1 justify-center items-center">
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
 
   return (
     <FlashList

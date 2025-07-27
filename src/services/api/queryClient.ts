@@ -48,7 +48,7 @@ export const invalidateQueries = (queryKey: string[]) => {
 };
 
 // Prefetch query helper
-export const prefetchQuery = (queryKey: string[], queryFn: () => Promise<any>) => {
+export const prefetchQuery = (queryKey: string[], queryFn: () => Promise<unknown>) => {
   return queryClient.prefetchQuery({
     queryKey,
     queryFn,

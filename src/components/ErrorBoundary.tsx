@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Feather from 'react-native-vector-icons/Feather';
@@ -12,7 +12,7 @@ interface ErrorFallbackProps {
 function ErrorFallback({ error, resetErrorBoundary }: ErrorFallbackProps) {
   return (
     <SafeAreaView className="flex-1 bg-red-50">
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <ScrollView contentContainerStyle={styles.scrollView}>
         <View className="flex-1 justify-center items-center p-6">
           <View className="bg-red-100 rounded-full p-4 mb-4">
             <Feather name="alert-triangle" size={48} color="#DC2626" />
@@ -66,8 +66,10 @@ export function ErrorBoundary({
         // Log to error tracking service
         if (__DEV__) {
           console.error('Error Boundary caught:', error);
+
           console.error('Component stack:', errorInfo.componentStack);
-          console.tron?.error?.('Error Boundary', error);
+          // eslint-disable-next-line no-console, @typescript-eslint/no-explicit-any
+          (console as any).tron?.error?.('Error Boundary', error);
         }
 
         // Call custom error handler if provided
@@ -109,3 +111,9 @@ export function withErrorBoundary<P extends object>(
 
   return WrappedComponent;
 }
+
+const styles = StyleSheet.create({
+  scrollView: {
+    flexGrow: 1,
+  },
+});
