@@ -27,7 +27,9 @@
       "@store/*": ["src/store/*"],
       "@theme/*": ["src/theme/*"],
       "@types/*": ["src/types/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@providers/*": ["src/providers/*"]
     },
     
     // Other options

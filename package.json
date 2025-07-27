@@ -19,23 +19,32 @@
     "dev:ios": "react-native run-ios"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.0",
     "@react-native/new-app-screen": "0.80.2",
     "@react-navigation/bottom-tabs": "^7.4.4",
     "@react-navigation/native": "^7.1.16",
     "@react-navigation/stack": "^7.4.4",
     "@reduxjs/toolkit": "^2.8.2",
+    "@shopify/flash-list": "^1.8.3",
+    "@tanstack/react-query": "^5.83.0",
+    "axios": "^1.11.0",
     "deepmerge": "^4.3.1",
     "nativewind": "^4.1.23",
     "react": "19.1.0",
+    "react-error-boundary": "^6.0.0",
+    "react-hook-form": "^7.61.1",
     "react-native": "0.80.2",
     "react-native-gesture-handler": "^2.27.2",
+    "react-native-mmkv": "^3.3.0",
     "react-native-paper": "^5.14.5",
     "react-native-reanimated": "^4.0.0",
     "react-native-safe-area-context": "^5.5.2",
     "react-native-screens": "^4.13.1",
     "react-native-vector-icons": "^10.3.0",
     "react-redux": "^9.2.0",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "zod": "^4.0.10",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -65,6 +74,8 @@
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.2",
     "react-test-renderer": "19.1.0",
+    "reactotron-react-native": "^5.1.14",
+    "reactotron-redux": "^3.2.0",
     "typescript": "5.0.4"
   },
   "engines": {
@@ -75,6 +86,8 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{json,md}": ["prettier --write"]
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   }
 }

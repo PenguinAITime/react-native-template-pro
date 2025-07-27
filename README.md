@@ -4,15 +4,31 @@ A production-ready React Native template with TypeScript, NativeWind (Tailwind C
 
 ## 🚀 Features
 
+### Core
 - **React Native 0.80.2** - Latest version with all the newest features
 - **TypeScript** - Full type safety with strict mode enabled
 - **NativeWind v4** - Use Tailwind CSS classes in React Native
-- **Redux Toolkit + RTK Query** - Modern state management with data fetching
-- **React Navigation** - Tab and stack navigation pre-configured
+- **Path Aliases** - Clean imports with @ prefix
+
+### State Management
+- **Redux Toolkit** - Modern Redux with less boilerplate
+- **RTK Query** - Powerful data fetching and caching
+- **React Query** - Server state management
+- **Zustand** - Lightweight state management for simple states
+- **MMKV Storage** - Fast, encrypted key-value storage (50x faster than AsyncStorage)
+
+### UI/UX
 - **React Native Paper** - Material Design components
+- **FlashList** - High-performance list component (30% faster than FlatList)
+- **React Hook Form + Zod** - Type-safe forms with validation
+- **Gesture Handler** - Smooth gesture interactions
+- **Error Boundaries** - Graceful error handling
+
+### Developer Experience
 - **ESLint + Prettier** - Code quality and formatting
 - **Husky + lint-staged** - Git hooks for code quality
-- **Path Aliases** - Clean imports with @ prefix
+- **Reactotron** - Advanced debugging tool
+- **Custom console.tron** - Enhanced logging in development
 
 ## 📋 Prerequisites
 
