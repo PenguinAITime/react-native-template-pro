@@ -26,6 +26,7 @@ module.exports = {
     // React rules
     'react/react-in-jsx-scope': 'off', // Not needed in React Native
     'react/prop-types': 'off', // We use TypeScript
+    'react/no-unstable-nested-components': ['warn', { allowAsProps: true }], // Allow icon props
     
     // General rules
     'no-console': ['warn', { allow: ['warn', 'error'] }],

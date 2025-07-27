@@ -6,7 +6,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 import { HomeScreen } from '@features/home/HomeScreen';
 import { SettingsScreen } from '@features/settings/SettingsScreen';
-import { theme } from '@theme/theme';
+import { navigationTheme } from '@theme/theme';
 
 import type { RootTabParamList, RootStackParamList } from './types';
 
@@ -54,7 +54,7 @@ function MainTabs() {
 
 export function AppNavigator() {
   return (
-    <NavigationContainer theme={theme as any}>
+    <NavigationContainer theme={navigationTheme}>
       <Stack.Navigator>
         <Stack.Screen name="MainTabs" component={MainTabs} options={{ headerShown: false }} />
       </Stack.Navigator>

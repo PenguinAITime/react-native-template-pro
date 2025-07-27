@@ -2,7 +2,6 @@ import React from 'react';
 import { View, ScrollView, Text, Switch } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { List, Divider } from 'react-native-paper';
-import Feather from 'react-native-vector-icons/Feather';
 import type { SettingsScreenProps } from '@navigation/types';
 
 export const SettingsScreen: React.FC<SettingsScreenProps> = () => {
@@ -21,7 +20,7 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = () => {
         <View className="bg-white">
           <List.Section>
             <List.Subheader>Preferences</List.Subheader>
-            
+
             <List.Item
               title="Dark Mode"
               description="Toggle dark theme"
@@ -35,9 +34,9 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = () => {
                 />
               )}
             />
-            
+
             <Divider />
-            
+
             <List.Item
               title="Push Notifications"
               description="Receive app notifications"
@@ -57,31 +56,35 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = () => {
 
           <List.Section>
             <List.Subheader>About</List.Subheader>
-            
+
             <List.Item
               title="Version"
               description="1.0.0"
               left={(props) => <List.Icon {...props} icon="information" />}
             />
-            
+
             <Divider />
-            
+
             <List.Item
               title="Privacy Policy"
               description="View our privacy policy"
               left={(props) => <List.Icon {...props} icon="shield-check" />}
               right={(props) => <List.Icon {...props} icon="chevron-right" />}
-              onPress={() => console.log('Privacy Policy pressed')}
+              onPress={() => {
+                // TODO: Navigate to privacy policy
+              }}
             />
-            
+
             <Divider />
-            
+
             <List.Item
               title="Terms of Service"
               description="View terms and conditions"
               left={(props) => <List.Icon {...props} icon="file-document" />}
               right={(props) => <List.Icon {...props} icon="chevron-right" />}
-              onPress={() => console.log('Terms pressed')}
+              onPress={() => {
+                // TODO: Navigate to terms of service
+              }}
             />
           </List.Section>
 
@@ -89,21 +92,25 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = () => {
 
           <List.Section>
             <List.Subheader>Developer</List.Subheader>
-            
+
             <List.Item
               title="Debug Mode"
               description="Show developer tools"
               left={(props) => <List.Icon {...props} icon="bug" />}
-              onPress={() => console.log('Debug mode')}
+              onPress={() => {
+                // TODO: Toggle debug mode
+              }}
             />
-            
+
             <Divider />
-            
+
             <List.Item
               title="Clear Cache"
               description="Clear app cache and data"
               left={(props) => <List.Icon {...props} icon="delete" />}
-              onPress={() => console.log('Clear cache')}
+              onPress={() => {
+                // TODO: Implement cache clearing
+              }}
             />
           </List.Section>
         </View>

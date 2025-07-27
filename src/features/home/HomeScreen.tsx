@@ -3,7 +3,7 @@ import { View, ScrollView, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Card, Title, Paragraph } from 'react-native-paper';
 import Feather from 'react-native-vector-icons/Feather';
-import { InfoCard, AppButton } from '@components/common';
+import { AppButton } from '@components/common';
 import type { HomeScreenProps } from '@navigation/types';
 
 export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
@@ -41,34 +41,28 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           <Card className="mb-4">
             <Card.Content>
               <Title>Redux Toolkit + RTK Query</Title>
-              <Paragraph>
-                Modern Redux setup with built-in data fetching and caching
-              </Paragraph>
+              <Paragraph>Modern Redux setup with built-in data fetching and caching</Paragraph>
             </Card.Content>
           </Card>
 
           <Card className="mb-4">
             <Card.Content>
               <Title>React Navigation</Title>
-              <Paragraph>
-                Tab and stack navigation pre-configured and ready to use
-              </Paragraph>
+              <Paragraph>Tab and stack navigation pre-configured and ready to use</Paragraph>
             </Card.Content>
           </Card>
 
           <Card className="mb-4">
             <Card.Content>
               <Title>ESLint + Prettier</Title>
-              <Paragraph>
-                Code quality tools with pre-commit hooks already configured
-              </Paragraph>
+              <Paragraph>Code quality tools with pre-commit hooks already configured</Paragraph>
             </Card.Content>
           </Card>
         </View>
 
         {/* Example Action */}
         <View className="px-4 mt-6 mb-8">
-          <AppButton 
+          <AppButton
             onPress={() => navigation.navigate('Settings')}
             icon={() => <Feather name="settings" size={20} color="#FFFFFF" />}
           >

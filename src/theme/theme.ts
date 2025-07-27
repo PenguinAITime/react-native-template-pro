@@ -9,9 +9,9 @@ const { LightTheme } = adaptNavigationTheme({
 
 // Custom colors matching tailwind.config.js
 const customColors = {
-  primary: '#10B981',    // Emerald Green
-  secondary: '#3B82F6',  // Blue
-  tertiary: '#F59E0B',   // Amber
+  primary: '#10B981', // Emerald Green
+  secondary: '#3B82F6', // Blue
+  tertiary: '#F59E0B', // Amber
   surface: '#FFFFFF',
   background: '#F9FAFB',
   error: '#EF4444',
@@ -21,7 +21,20 @@ const customColors = {
   surfaceVariant: '#E5E7EB',
 };
 
-// Merge themes properly
+// Create navigation theme
+export const navigationTheme = {
+  ...NavigationDefaultTheme,
+  colors: {
+    ...NavigationDefaultTheme.colors,
+    primary: customColors.primary,
+    background: customColors.background,
+    card: customColors.surface,
+    text: customColors.onSurface,
+    border: customColors.surfaceVariant,
+  },
+};
+
+// Merge themes properly for Paper
 export const theme = merge.all([
   MD3LightTheme,
   LightTheme,
