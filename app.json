@@ -7,6 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "scheme": "reactnativetemplate",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -17,17 +18,28 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yourcompany.reactnativetemplate"
+      "bundleIdentifier": "com.yourcompany.reactnativetemplate",
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.yourcompany.reactnativetemplate"
+      "package": "com.yourcompany.reactnativetemplate",
+      "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/your-project-id"
+    },
+    "plugins": [],
+    "experiments": {
+      "typedRoutes": true
     },
     "extra": {
       "eas": {
